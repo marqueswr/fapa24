@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Sala extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'celula',
+        'serie',
+        'turma',
+        'turno',
+        'ano',
+        'gstp',
+        'situacao',
+    ];
 }

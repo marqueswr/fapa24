@@ -26,9 +26,9 @@
                 <label for="sala">SALA</label>
               <select  id="sala" name="sala" class="form-control">
                     <option value="">-- Selecione a Sala --</option>
-                    @foreach ($lista as $lst)
-                    <option value="{{$lst->id}}">
-                        {{$lst->sobrenome}}
+                    @foreach ($salas as $sala)
+                    <option value="{{$sala->id}}">
+                        {{$sala->gstp}}
                     </option>
                     @endforeach
                 </select>

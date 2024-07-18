@@ -7,17 +7,22 @@ use Illuminate\Http\Request;
 
 class SalaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+
+    public function index(Request $request)
     {
-        //
+        $salas = Sala::when ($request->has('celula'), function($whenQuery) use ($request){
+            $whenQuery->where('celula', 'like','%' . $request->celula . '%');
+        })
+        ->orderBy('celula')->paginate(5);
+
+        return view('sala.index', [
+            'salas'=> $salas,
+            'celula'=> $request-> celula,
+        ]);
+
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //

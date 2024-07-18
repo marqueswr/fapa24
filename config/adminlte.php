@@ -296,12 +296,23 @@ return [
     'menu' => [
         // Navbar items:
 
+        ['header' => 'Administração'],
+        [
+            'text' => 'Salas',
+            'url' => 'sala-index',
+            'icon' => 'fas fa-fw fa-graduation-cap',
+        ],
+        [
+            'text' => 'Usuários',
+            'url' => 'admin/settings',
+            'icon' => 'fas fa-fw fa-phone',
+        ],
 
 
         ['header' => 'Informações de Alunos'],
         [
             'text' => 'Básico',
-            'url' => 'admin/settings',
+            'url' => 'aluno-basico-index',
             'icon' => 'fas fa-fw fa-graduation-cap',
         ],
         [

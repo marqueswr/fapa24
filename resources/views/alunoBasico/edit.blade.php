@@ -16,7 +16,6 @@
         <div class="row">
 
                 <input type="text" hidden id="situacao" name="situacao" value="0">
-                <input type="text" hidden id="sala" name="sala" value="alterada">
 
                 <label for="codigo">CÓDIGO</label>
                 <input class="form-control"  type="text" id="codigo" name="codigo" value="{{ old('codigo', $aluno->codigo) }}" ></br></br>
@@ -27,15 +26,16 @@
                 <label for="nascimento">NASCIMENTO</label>
                 <input class="form-control" type="date" id="nascimento" name="nascimento" value="{{ old('nascimento', $aluno->nascimento) }}"></br></br>
                 <label for="sala">SALA</label>
-             {{--  <select  id="sala" name="sala" class="form-control">
-                    <option value="">-- Selecione a Sala --</option>
-                    @foreach ($lista as $lst)
-                    <option value="{{$lst->id}}">
-                        {{$lst->sobrenome}}
-                    </option>
+
+                <select  id="sala" name="sala" class="form-control">
+                    <option value="">-- Selecione a sala --</option>
+                    @foreach ($salas as $sala)
+                    <option value="{{ $sala->id }}"
+                      {{ old('sala', $sala->sala) == $sala->id ? 'selected' : '' }}>
+                      {{ $sala->gstp }}</option>
                     @endforeach
                 </select>
- --}}
+
         </div>
         <br>
 

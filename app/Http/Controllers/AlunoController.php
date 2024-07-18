@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use App\Models\Sala;
 use App\Models\Aluno;
 use Illuminate\Http\Request;
 use App\Http\Requests\AlunoRequest;
@@ -27,8 +28,8 @@ class AlunoController extends Controller
 
     public function create()
     {
-        $lista = Aluno::all();
-        return view('alunoBasico.create',['lista' => $lista]);
+        $salas = Sala::all();
+        return view('alunoBasico.create',['salas' => $salas]);
     }
 
 
@@ -65,7 +66,8 @@ class AlunoController extends Controller
 
     public function edit(Aluno $aluno)
     {
-        return view('alunoBasico.edit', ['aluno' => $aluno]);
+        $salas = Sala::all();
+        return view('alunoBasico.edit', ['aluno' => $aluno, 'salas'=>$salas]);
     }
 
 

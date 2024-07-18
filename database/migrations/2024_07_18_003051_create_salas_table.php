@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('salas', function (Blueprint $table) {
             $table->id();
+            $table->string('celula','50');
+            $table->string('serie','20');
+            $table->string('turma','1');
+            $table->string('turno','20');
+            $table->string('ano','4');
+            $table->string('gstp','30');
+            $table->string('situacao','20');
             $table->timestamps();
         });
     }
