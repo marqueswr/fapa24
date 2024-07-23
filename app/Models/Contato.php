@@ -10,8 +10,12 @@ class Contato extends Model
     use HasFactory;
 
     protected $fillable = [
+        'aluno_id',
         'celular',
         'emailPessoal',
         'emailInstitucional'
     ];
+
+    public function aluno(){
+        return $this->belongsTo(Aluno::class,'aluno)_id');
 }
