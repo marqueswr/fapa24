@@ -14,7 +14,11 @@ class Aluno extends Model
         'primeiroNome',
         'sobrenome',
         'nascimento',
-        'sala',
+        'sala_id',
         'situacao',
     ];
+
+    public function sala(){
+        return $this->belongsTo(Sala::class,'sala_id');
+}
 }

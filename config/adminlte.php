@@ -296,7 +296,7 @@ return [
     'menu' => [
         // Navbar items:
 
-        ['header' => 'Administração'],
+        ['header' => '--- ADMINISTRAÇÃO ---'],
         [
             'text' => 'Salas',
             'url' => 'sala-index',
@@ -309,7 +309,7 @@ return [
         ],
 
 
-        ['header' => 'Informações de Alunos'],
+        ['header' => '--- ALUNOS ---'],
         [
             'text' => 'Básico',
             'url' => 'aluno-basico-index',
@@ -336,18 +336,23 @@ return [
            'icon' => 'fas fa-fw fa-image',
         ],
 
-        ['header' => 'Informações de Ocorrências'],
+        ['header' => '--- OCORRÊNCIAS ---' ],
         [
             'text' => 'Tipos',
+            'url' => 'admin/settings',
+            'icon' => 'fas fa-fw fa-bomb',
+        ],
+        [
+            'text' => 'Individual',
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Lançamentos',
+            'text' => 'Coletiva',
             'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-fw fa-users',
         ],
-        ['header' => 'Informações Gerais'],
+        ['header' => '--- GERAL ---'],
 
         [
             'text' => 'Saúde',

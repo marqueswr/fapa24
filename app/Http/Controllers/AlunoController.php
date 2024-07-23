@@ -21,14 +21,14 @@ class AlunoController extends Controller
 
         return view('alunoBasico.index', [
             'alunos'=> $alunos,
-            'primeiroNome'=> $request-> primeiroNome,
+            'primeiroNome'=> $request-> primeiroNome
         ]);
     }
 
 
     public function create()
     {
-        $salas = Sala::all();
+        $salas = Sala::orderBy('celula','asc')->orderBy('serie','asc')->orderBy('turma','asc')->get();
         return view('alunoBasico.create',['salas' => $salas]);
     }
 
@@ -45,7 +45,7 @@ class AlunoController extends Controller
                'primeiroNome' => strtoupper($aluno->primeiroNome),
                'sobrenome' => strtoupper($aluno->sobrenome),
                'nascimento' => $aluno->nascimento,
-               'sala' => $aluno->sala,
+               'sala_id' => $aluno->sala,
                'situacao' => $aluno->situacao
             ]);
 
@@ -66,13 +66,15 @@ class AlunoController extends Controller
 
     public function edit(Aluno $aluno)
     {
-        $salas = Sala::all();
+        $salas = Sala::orderBy('celula','asc')->orderBy('serie','asc')->orderBy('turma','asc')->get();
         return view('alunoBasico.edit', ['aluno' => $aluno, 'salas'=>$salas]);
     }
 
 
     public function update(AlunoRequest $request, Aluno $aluno)
     {
+        $request['situacao'] = (!isset($request['situacao']))? 0 : 1;
+
         $request->validated();
 
         try {
@@ -81,10 +83,10 @@ class AlunoController extends Controller
                'primeiroNome' => strtoupper($request->primeiroNome),
                'sobrenome' => strtoupper($request->sobrenome),
                'nascimento' => $request->nascimento,
-               'sala' => $request->sala,
+               'sala_id' => $request->sala_id,
                'situacao' => $request->situacao
             ]);
-            return redirect()->route('aluno.basico.index')->with('success', 'Aluno foi alterado para ' . $request->primeiroNome . ' com sucesso !!!');
+            return redirect()->route('aluno.basico.index')->with('success', 'Os dados informados do aluno foram alterados com sucesso !!!');
 
 
         } catch (Exception $e) {

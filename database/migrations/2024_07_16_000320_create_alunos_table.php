@@ -17,7 +17,10 @@ return new class extends Migration
             $table->string('primeiroNome','150');
             $table->string('sobrenome',50);
             $table->date('nascimento');
-            $table->string('sala','30');
+      
+            $table->unsignedBigInteger('sala_id');
+            $table->foreign('sala_id')->references('id')->on('salas')->onDelete('cascade')->onUpdate('cascade');
+
             $table->string('situacao','20');
             $table->timestamps();
         });

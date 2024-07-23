@@ -65,7 +65,15 @@
                           <b>Código: </b>{{ $aluno->codigo }}</br>
                           <b>Nome completo: </b>{{ $aluno->primeiroNome }} {{ $aluno->sobrenome }} </br>
                           <b>Data de nascimento:</b> {{ \Carbon\Carbon::parse($aluno->nascimento)->format('d/m/Y') }} </br>
-                          <b>Sala:</b> {{ $aluno->sala }}</br>
+                          <b>Sala:</b> {{ $aluno->sala->gstp }}</br>
+                          <b>Situação:</b>
+                          @if($aluno->situacao == 0)
+                            INATIVO
+                            @else
+                            ATIVO
+                          @endif
+
+                        </br>
                           <b>Registro criado em:</b> {{  \Carbon\Carbon::parse($aluno->created_at)->format('d/m/Y h:m:s') }}
                         </div>
                         <div class="modal-footer">
