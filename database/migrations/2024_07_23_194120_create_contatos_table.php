@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('contatos', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('aluno_id');
+            $table->foreign('aluno_id')->references('id')->on('alunos')->onDelete('cascade')->onUpdate('cascade');
+
             $table->string('celular',20);
             $table->string('emailPessoal',150);
             $table->string('emailInstitucional',150);
