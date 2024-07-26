@@ -5,15 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contato extends Model
+class Endereco extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'aluno_id',
-        'celular',
-        'emailPessoal',
-        'emailInstitucional'
+        'rua',
+        'numero',
+        'bairro',
+        'cep',
+        'cidade',
+        'estado',
+        'complemento'
     ];
 
     public function aluno(){

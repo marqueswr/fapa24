@@ -13,7 +13,7 @@
             <div class="col" >
                 <form action="{{ route('sala.index') }}">
                     <div style="width: 80%">
-                    <input  type="text" name="celula" id="celuila" class="form-control" value="{{ $celula }}"  placeholder="parte do nome da célula"/>
+                    <input  type="text" name="celula" id="celula" class="form-control" value="{{ $celula }}"  placeholder="parte do nome da célula"/>
             </div>
             </div>
 

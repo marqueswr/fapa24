@@ -317,12 +317,12 @@ return [
         ],
         [
             'text' => 'Contato',
-            'url' => 'admin/settings',
+            'url' => 'contato-index',
             'icon' => 'fas fa-fw fa-phone',
         ],
         [
             'text' => 'Endereço',
-            'url' => 'admin/settings',
+            'url' => 'endereco-index',
             'icon' => 'fas fa-fw fa-street-view',
         ],
         [

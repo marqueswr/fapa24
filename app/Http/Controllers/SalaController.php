@@ -92,7 +92,6 @@ class SalaController extends Controller
     public function update(SalaRequest $request, Sala $sala)
     {
 
-
         $request['situacao'] = (!isset($request['situacao']))? 0 : 1;
         $request->validated();
 
